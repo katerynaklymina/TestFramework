@@ -14,6 +14,7 @@ public class DriverManager {
         return INSTANCE;
     }
 
+
     public DriverManager createWebDriver() {
         System.setProperty(PropertyConstants.CHROME_DRIVER, PropertyConstants.DRIVER_PATH);
         driver.set(new ChromeDriver());
