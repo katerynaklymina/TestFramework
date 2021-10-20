@@ -1,13 +1,11 @@
 package selenium;
 
-import org.testng.annotations.DataProvider;
-import test_data.TestData;
 import helper.Randomizer;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import page_steps.selenium.ItemDetailsPageSteps;
 import page_steps.selenium.ItemReviewFormSteps;
 import page_steps.selenium.SearchPageSteps;
+import test_data.TestData;
 import test_data.data_provider.DataProviderClass;
 import utils.Wait;
 
@@ -15,9 +13,9 @@ import static java.lang.String.format;
 
 public class ItemInformationTest extends BaseTest {
 
-    SearchPageSteps searchPageSteps;
-    ItemDetailsPageSteps itemDetailsPageSteps;
-    ItemReviewFormSteps itemReviewFormSteps;
+    private SearchPageSteps searchPageSteps;
+    private ItemDetailsPageSteps itemDetailsPageSteps;
+    private ItemReviewFormSteps itemReviewFormSteps;
 
     @org.testng.annotations.Test(dataProvider = "dataForSearch", dataProviderClass = DataProviderClass.class)
     public void verifyItemInformation(String searchWord) {
