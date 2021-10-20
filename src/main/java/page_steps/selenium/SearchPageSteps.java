@@ -6,6 +6,7 @@ public class SearchPageSteps {
 
     private SearchPage searchPage = new SearchPage();
 
+
     public SearchPage getSearchPage(){
         return searchPage;
     }
