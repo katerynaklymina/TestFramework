@@ -8,7 +8,7 @@ import utils.Wait;
 
 public class TopMenuTabTest extends BaseTest {
 
-    TopMenuTabSteps topMenuTabSteps;
+    private TopMenuTabSteps topMenuTabSteps;
 
     @Test
     public void verifyTopMenuPanel() {
