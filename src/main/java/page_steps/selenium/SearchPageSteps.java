@@ -6,6 +6,7 @@ public class SearchPageSteps {
 
     private SearchPage searchPage = new SearchPage();
 
+
     public SearchPage getSearchPage(){
         return searchPage;
     }
@@ -28,6 +29,7 @@ public class SearchPageSteps {
         return condition;
     }
 
+
     public void clickOnFirstItemInList() {
         // itemsTextList.stream().findFirst().get().click();
         searchPage.getItemsTextList().get(0).click();
@@ -37,3 +39,6 @@ public class SearchPageSteps {
         return searchPage.getSearchButton().isEnabled();
     }
 }
+
+
+
