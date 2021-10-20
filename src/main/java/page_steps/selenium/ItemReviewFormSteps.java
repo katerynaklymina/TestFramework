@@ -15,10 +15,6 @@ public class ItemReviewFormSteps {
         return itemReviewForm.getReviewForm().isDisplayed();
     }
 
-    public void clickOnReviewItemTab() {
-        itemReviewForm.getReviewItemTab().click();
-    }
-
     public void fillAdvantageField(String text) {
         itemReviewForm.getAdvantageField().sendKeys(text);
     }
@@ -69,9 +65,5 @@ public class ItemReviewFormSteps {
 
     public String getConfirmationMessage() {
         return itemReviewForm.getConfirmationMessage().getText();
-    }
-
-    public boolean getConfirmationMessage1(String t) {
-        return itemReviewForm.getConfirmationMessage().getText().contains(t);
     }
 }

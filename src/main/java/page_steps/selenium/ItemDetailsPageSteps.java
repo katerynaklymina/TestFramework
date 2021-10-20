@@ -12,19 +12,6 @@ public class ItemDetailsPageSteps {
     public ItemDetailsPage getItemDetailsPage(){
         return itemDetailsPage;
     }
-
-    public boolean isBuyButtonEnabled() {
-        return itemDetailsPage.getBuyButton().isEnabled();
-    }
-
-    public boolean isBuyInOneClickEnabled() {
-        return itemDetailsPage.getBuyInOneClick().isEnabled();
-    }
-
-    public boolean isBuyInInstallmentEnabled() {
-        return itemDetailsPage.getBuyInInstallment().isEnabled();
-    }
-
     public boolean isLikeIconDisplayed() {
         return itemDetailsPage.getLikeIcon().isDisplayed();
     }
@@ -74,7 +61,4 @@ public class ItemDetailsPageSteps {
         return d;
     }
 
-    public boolean doesCharacteristicTableRowsContainText(String text) {
-        return itemDetailsPage.getCharacteristicTableRows().get(1).getText().contains(text);
-    }
 }
