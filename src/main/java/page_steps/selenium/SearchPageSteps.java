@@ -29,6 +29,7 @@ public class SearchPageSteps {
         return condition;
     }
 
+
     public void clickOnFirstItemInList() {
         // itemsTextList.stream().findFirst().get().click();
         searchPage.getItemsTextList().get(0).click();
