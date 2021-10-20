@@ -38,3 +38,6 @@ public class SearchPageSteps {
         return searchPage.getSearchButton().isEnabled();
     }
 }
+
+
+
