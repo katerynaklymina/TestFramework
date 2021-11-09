@@ -50,10 +50,10 @@ public class ItemReviewForm extends BasePage {
     @FindBy(xpath = "//div[@id='write-comment']//button[@data-callback= 'onCommentSubmit']")
     private WebElement leaveCommentButton;
 
-    @FindBy(xpath = "span[contains(text(), 'Отзыв о товаре')]")// does not work
+    @FindBy(xpath = "span[contains(text(), 'Отзыв о товаре')]")
     private WebElement reviewItemTab;
 
-    @FindBy(xpath = "//span[contains(text(), 'Комментарий')]")// does not work
+    @FindBy(xpath = "//span[contains(text(), 'Комментарий')]")
     private WebElement commentItemTab;
 
     @FindBy(xpath = "//div[@class = 'ttl js_title']")

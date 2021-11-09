@@ -21,7 +21,7 @@ public class Randomizer {
 
         //String result = random.concat(end);
 
-        StringBuilder stringBuilder = new StringBuilder();//попросить объяснить это
+        StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(random);
         stringBuilder.append(end);
         return stringBuilder.toString();
