@@ -24,4 +24,12 @@ public class SearchPage {
         itemsTextList.shouldHave().stream().map(SelenideElement::getText).collect(Collectors.toList()).contains(s);
     }
 
+    public void clickOnFirstItem(){
+        itemsTextList.stream().findFirst().get().click();
+    }
+
+    public void clickOnSearchButton(){
+       searchButton.click();
+    }
+
 }

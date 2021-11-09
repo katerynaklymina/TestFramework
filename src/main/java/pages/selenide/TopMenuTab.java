@@ -48,6 +48,13 @@ public class TopMenuTab {
         });
     }
 
+    public void assertLangDropdownListTitles(String expectedTitles){
+        List<String> expectedTitlesList = Arrays.asList(expectedTitles.split(","));
+        expectedTitlesList.forEach(header->{
+            Assert.assertTrue($$(languageDropdownList).stream().map(SelenideElement::getText).collect(Collectors.toList()).contains(header));
+        });
+    }
+
     public void assertTopMenuListTitles(String expectedTitles){
         List<String> expectedTitlesList = Arrays.asList(expectedTitles.split(","));
         expectedTitlesList.forEach(header->{

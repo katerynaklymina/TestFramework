@@ -1,5 +1,7 @@
 package selenide;
 
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.selenide.SearchPage;
 import pages.selenide.TopMenuTab;
@@ -9,21 +11,26 @@ import test_data.data_provider.DataProviderClass;
 import static com.codeborne.selenide.Selenide.open;
 import static constants.HostConstants.AVIC_HOST;
 
-public class TopMenuTabTest {
+public class TopMenuTabTest extends BaseTest{
+
+    TopMenuTab topMenuTab;
+    SearchPage searchPage;
+
+    @BeforeMethod
+   public void initialize(){
+       topMenuTab = new TopMenuTab();
+       searchPage = new SearchPage();
+       open(AVIC_HOST);
+   }
 
     @Test(dataProvider = "dataForSearch", dataProviderClass = DataProviderClass.class)
     public void verifySearchFunctionality(String searchData) {
-        SearchPage searchPage = new SearchPage();
-        open(AVIC_HOST);
         searchPage.inputSearchField(searchData);
         searchPage.assertSearchList(searchData);
     }
 
-    @Test
+    @Test()
     public void verifyTopMenuTabFunctionality() {
-        TopMenuTab topMenuTab = new TopMenuTab();
-        open(AVIC_HOST);
-
         topMenuTab.isMenuTabPanelLinkListDisplayed();
         topMenuTab.isPhoneLogosListDisplayed();
         topMenuTab.assertTopMenuListTitles(TestData.EXPECTED_MENU_TAB_LIST);
@@ -34,6 +41,6 @@ public class TopMenuTabTest {
 
         topMenuTab.clickOnTheButton("RU");
         topMenuTab.isLanguageDropdownListDisplayed();
-        topMenuTab.assertTopMenuDropdownListTitles(TestData.EXPECTED_DROPDOWN_LANG);
+        topMenuTab.assertLangDropdownListTitles(TestData.EXPECTED_DROPDOWN_LANG);
     }
 }
