@@ -13,6 +13,7 @@ import pages.selenide.ItemReviewForm;
 import pages.selenide.SearchPage;
 import test_data.data_provider.DataProviderClass;
 import utils.Wait;
+import utils.WaitSelenide;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
@@ -26,12 +27,14 @@ public class ItemInformationTest extends BaseTest {
     SearchPage searchPage;
     ItemDetailsPage itemDetailsPage;
     ItemReviewForm itemReviewForm;
+    WaitSelenide wait;
 
     @BeforeMethod
     public void initialize() {
         searchPage = new SearchPage();
         itemDetailsPage = new ItemDetailsPage();
         itemReviewForm = new ItemReviewForm();
+        wait = new WaitSelenide();
         open(AVIC_HOST);
     }
 
@@ -53,8 +56,9 @@ public class ItemInformationTest extends BaseTest {
         searchPage.clickOnFirstItem();
         itemDetailsPage.clickOnDeliveryAndPaymentMethodsButton();
         itemDetailsPage.clickOnItemOfAdditionalInfoList("Отзывы");
-
+        wait.waitVisible(itemReviewForm.getReviewForm());
         itemReviewForm.assertIsItemReviewFormDisplayed();
+        itemReviewForm.assertAreStarsDisplayed();
         itemReviewForm.fillStars(5);
         itemReviewForm.sendReview(
                 Randomizer.randomAlphanumeric(advantage),
@@ -69,16 +73,16 @@ public class ItemInformationTest extends BaseTest {
     }
 
     @Test
-    public void verifyItemCommentForm(){
+    public void verifyItemCommentForm() {
         searchPage.inputSearchField("apple");
         searchPage.clickOnSearchButton();
         searchPage.clickOnFirstItem();
         itemDetailsPage.clickOnDeliveryAndPaymentMethodsButton();
         itemDetailsPage.clickOnItemOfAdditionalInfoList("Отзывы");
-
+        wait.waitVisible(itemReviewForm.getReviewForm());
         itemReviewForm.assertIsItemReviewFormDisplayed();
         itemReviewForm.clickOnCommentTab();
-
+       // wait.waitVisible(itemReviewForm.getCommentItemTab());
         itemReviewForm.sendComment(
                 Randomizer.randomAlphanumeric(5),
                 Randomizer.randomAlphanumeric(5),
