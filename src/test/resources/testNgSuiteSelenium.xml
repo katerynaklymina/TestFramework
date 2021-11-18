@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Avic Suite" verbose="1" >
-    <test name="Smoke selenium suite" >
+    <test name="Smoke tests_UI.selenium suite" >
         <classes>
-            <class name="selenium.ItemInformationTest"/>
-            <class name="selenium.TopMenuTabTest"/>
+            <class name="tests_UI.selenium.ItemInformationTest"/>
+            <class name="tests_UI.selenium.TopMenuTabTest"/>
         </classes>
     </test>
 </suite>
